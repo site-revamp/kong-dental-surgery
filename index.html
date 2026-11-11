@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087b83">
+  <meta name="description" content="Kong Dental Surgery provides affordable, comprehensive dental care across five Singapore clinics. Explore general dentistry, wisdom tooth extraction, braces, implants and family dental care.">
+  <title>Kong Dental Surgery | Trusted Dental Care Across Singapore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Retain the existing cool blue/teal dental-brand direction.
+         Confirm exact brand HEX values against the original logo before launch. */
+      --brand: #087b83;
+      --brand-dark: #075c65;
+      --brand-light: #e8f5f4;
+      --navy: #183b4a;
+      --ink: #26363d;
+      --muted: #66777d;
+      --paper: #ffffff;
+      --surface: #f5f9f9;
+      --line: #dce8e8;
+      --accent: #e7b86c;
+      --radius: 20px;
+      --shadow: 0 18px 50px rgba(24, 59, 74, .09);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: 88px 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--brand); font-size: 15px; font-weight: 800;
+      letter-spacing: .11em; text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: ""; width: 24px; height: 2px; background: var(--accent);
+    }
+    h1, h2, h3, h4 {
+      margin: 0; color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.14; letter-spacing: -.035em;
+    }
+    h1 { font-size: clamp(42px, 5.2vw, 66px); }
+    h2 { font-size: clamp(32px, 4vw, 46px); }
+    h3 { font-size: 22px; }
+    p { margin: 0; color: var(--muted); }
+    .section-heading { max-width: 680px; margin-bottom: 38px; }
+    .section-heading h2 { margin: 13px 0 14px; }
+    .section-heading p { max-width: 610px; font-size: 17px; }
+    .btn {
+      min-height: 52px; display: inline-flex; align-items: center;
+      justify-content: center; gap: 10px; padding: 0 23px;
+      border: 1px solid transparent; border-radius: 999px;
+      font-size: 16px; font-weight: 800; transition: .2s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--brand); color: white; }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); }
+    .btn-outline { border-color: var(--brand); color: var(--brand); background: white; }
+    .btn-outline:hover { background: var(--brand-light); }
+    .btn-white { color: var(--brand-dark); background: white; }
+    .btn-white:hover { background: var(--brand-light); }
+    .text-link { color: var(--brand); font-weight: 800; }
+    .text-link:hover { text-decoration: underline; }
+
+    /* Top utility bar */
+    .utility {
+      background: var(--navy); color: #eaf4f4;
+      font-size: 14px; padding: 9px 0;
+    }
+    .utility-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px;
+    }
+    .utility a { color: white; font-weight: 700; }
+    .utility-right { display: flex; align-items: center; gap: 22px; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid rgba(220,232,232,.85);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 82px; display: flex; align-items: center;
+      justify-content: space-between; gap: 28px;
+    }
+    .brand-lockup { display: flex; align-items: center; gap: 12px; min-width: 190px; }
+    .brand-mark {
+      width: 45px; height: 45px; display: grid; place-items: center;
+      color: white; background: var(--brand); border-radius: 14px;
+      font-family: "Manrope", sans-serif; font-size: 22px; font-weight: 800;
+    }
+    .brand-name { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-name strong {
+      color: var(--navy); font-family: "Manrope", sans-serif;
+      font-size: 18px; font-weight: 800; letter-spacing: -.04em;
+    }
+    .brand-name span {
+      color: var(--muted); font-size: 12px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a {
+      color: #40545b; font-size: 15px; font-weight: 700;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--brand); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-actions .btn { min-height: 46px; padding-inline: 18px; }
+    .menu-toggle {
+      display: none; width: 46px; height: 46px; border: 1px solid var(--line);
+      border-radius: 12px; background: white; color: var(--navy);
+      font-size: 23px; cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden; padding: 66px 0 76px;
+      background: linear-gradient(115deg, #f1f9f8 0%, #ffffff 55%, #edf7f6 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; width: 480px; height: 480px;
+      right: -210px; top: -240px; border-radius: 50%;
+      border: 1px solid rgba(8,123,131,.12);
+      box-shadow: 0 0 0 55px rgba(8,123,131,.025), 0 0 0 110px rgba(8,123,131,.02);
+    }
+    .hero-grid {
+      position: relative; display: grid; grid-template-columns: 1fr 1.02fr;
+      align-items: center; gap: 56px;
+    }
+    .hero-copy { max-width: 560px; }
+    .hero-copy h1 { margin: 17px 0 21px; }
+    .hero-copy h1 span { color: var(--brand); }
+    .hero-copy > p { max-width: 520px; font-size: 18px; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+    .hero-points {
+      display: flex; flex-wrap: wrap; gap: 17px 24px; margin-top: 30px;
+    }
+    .hero-point {
+      display: flex; align-items: center; gap: 8px;
+      color: #435b61; font-size: 15px; font-weight: 700;
+    }
+    .check {
+      width: 22px; height: 22px; display: grid; place-items: center;
+      border-radius: 50%; color: var(--brand); background: #d9efec;
+      font-size: 13px; font-weight: 900;
+    }
+    .hero-visual { position: relative; min-width: 0; }
+    .hero-photo {
+      width: 100%; height: 500px; object-fit: cover;
+      border-radius: 32px; box-shadow: var(--shadow);
+    }
+    .hero-note {
+      position: absolute; left: -28px; bottom: 28px;
+      max-width: 255px; display: flex; align-items: center; gap: 13px;
+      padding: 18px 20px; background: white; border-radius: 17px;
+      box-shadow: var(--shadow);
+    }
+    .hero-note-icon {
+      flex: 0 0 44px; width: 44px; height: 44px;
+      display: grid; place-items: center; border-radius: 13px;
+      color: var(--brand); background: var(--brand-light);
+    }
+    .hero-note strong { display: block; color: var(--navy); font-size: 15px; }
+    .hero-note span { display: block; color: var(--muted); font-size: 14px; }
+
+    /* Trust strip */
+    .trust-strip { padding: 25px 0; background: white; border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .trust-icon {
+      width: 42px; height: 42px; display: grid; place-items: center;
+      border-radius: 13px; background: var(--brand-light); color: var(--brand);
+    }
+    .trust-item strong { display: block; color: var(--navy); font-size: 15px; }
+    .trust-item span { display: block; color: var(--muted); font-size: 14px; }
+
+    /* Services */
+    .services { background: var(--surface); }
+    .services-top {
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 24px; margin-bottom: 36px;
+    }
+    .services-top .section-heading { margin-bottom: 0; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .service-card {
+      min-height: 190px; display: flex; align-items: flex-start; gap: 20px;
+      padding: 27px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: white; transition: .25s ease;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #b8d9d8; }
+    .service-icon {
+      flex: 0 0 58px; width: 58px; height: 58px; display: grid;
+      place-items: center; color: var(--brand); background: var(--brand-light);
+      border-radius: 17px;
+    }
+    .service-card h3 { margin: 2px 0 9px; }
+    .service-card p { margin-bottom: 15px; font-size: 15px; }
+    .service-card .text-link { font-size: 15px; }
+
+    /* Six-icon care values */
+    .care-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 65px; align-items: center; }
+    .care-photo {
+      width: 100%; height: 490px; object-fit: cover;
+      border-radius: 28px; box-shadow: var(--shadow);
+    }
+    .care-copy h2 { margin: 13px 0 17px; }
+    .care-copy > p { font-size: 17px; }
+    .value-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 19px 22px; margin-top: 30px; }
+    .value-item { display: flex; align-items: flex-start; gap: 12px; }
+    .value-item .service-icon { flex-basis: 45px; width: 45px; height: 45px; border-radius: 13px; }
+    .value-item strong { display: block; color: var(--navy); font-size: 15px; margin: 1px 0 4px; }
+    .value-item p { font-size: 14px; line-height: 1.5; }
+
+    /* Doctors */
+    .team { background: var(--surface); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .doctor-card {
+      overflow: hidden; border: 1px solid var(--line); border-radius: 22px;
+      background: white; transition: .25s ease;
+    }
+    .doctor-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .doctor-photo {
+      width: 100%; height: 265px; object-fit: cover; object-position: center top;
+      background: #e9f1f1;
+    }
+    .doctor-info { padding: 23px; }
+    .doctor-info h3 { font-size: 20px; margin-bottom: 8px; }
+    .doctor-info p { font-size: 15px; min-height: 48px; }
+    .doctor-info a { display: inline-block; margin-top: 15px; }
+
+    /* Journey */
+    .journey { background: white; }
+    .journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .journey-card {
+      padding: 28px; border-radius: 20px; border: 1px solid var(--line);
+      background: white;
+    }
+    .journey-number {
+      width: 45px; height: 45px; display: grid; place-items: center;
+      margin-bottom: 20px; border-radius: 14px; color: white;
+      background: var(--brand); font-weight: 800;
+    }
+    .journey-card h3 { margin-bottom: 10px; }
+    .journey-card p { font-size: 15px; }
+
+    /* Locations */
+    .locations { background: var(--surface); }
+    .location-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 17px; }
+    .location-card {
+      display: flex; justify-content: space-between; gap: 20px;
+      padding: 24px; background: white; border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .location-card h3 { font-size: 19px; margin-bottom: 8px; }
+    .location-card p { font-size: 15px; line-height: 1.6; }
+    .location-card .location-phone { display: inline-block; margin-top: 10px; color: var(--brand); font-weight: 800; }
+    .location-arrow {
+      flex: 0 0 42px; width: 42px; height: 42px; display: grid;
+      place-items: center; align-self: center; border-radius: 50%;
+      color: var(--brand); background: var(--brand-light); font-size: 20px;
+    }
+    .hours-panel {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px; margin-top: 25px; padding: 24px 27px;
+      background: var(--navy); border-radius: 18px; color: white;
+    }
+    .hours-panel h3 { color: white; font-size: 19px; margin-bottom: 5px; }
+    .hours-panel p { color: #d3e4e6; font-size: 15px; }
+
+    /* Virtual consultation */
+    .virtual-card {
+      display: grid; grid-template-columns: 1.1fr .9fr; align-items: center;
+      gap: 30px; padding: 42px; border-radius: 28px;
+      background: linear-gradient(120deg, #e9f5f4, #f6fbfa);
+    }
+    .virtual-card h2 { margin: 12px 0 14px; }
+    .virtual-card p { max-width: 570px; font-size: 17px; }
+    .virtual-points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0 26px; }
+    .virtual-points span { color: #40575d; font-size: 15px; font-weight: 700; }
+    .virtual-visual {
+      min-height: 260px; display: grid; place-items: center;
+      border-radius: 22px; background: var(--brand);
+      color: white; text-align: center; padding: 25px;
+    }
+    .virtual-visual strong { display: block; margin-top: 12px; font-family: "Manrope"; font-size: 25px; }
+    .virtual-visual span { display: block; color: #d9eeee; font-size: 15px; }
+
+    /* FAQ */
+    .faq-wrap { max-width: 850px; margin-inline: auto; }
+    .faq-list { display: grid; gap: 12px; }
+    .faq-item { border: 1px solid var(--line); border-radius: 15px; background: white; }
+    .faq-question {
+      width: 100%; display: flex; justify-content: space-between; gap: 20px;
+      padding: 20px 22px; border: 0; background: transparent;
+      color: var(--navy); text-align: left; font-weight: 800;
+      font-size: 16px; cursor: pointer;
+    }
+    .faq-question span:last-child { color: var(--brand); font-size: 21px; }
+    .faq-answer { display: none; padding: 0 22px 20px; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-answer p { font-size: 15px; }
+
+    /* CTA */
+    .final-cta { padding: 78px 0; background: var(--navy); }
+    .cta-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 32px;
+    }
+    .cta-inner h2 { max-width: 620px; color: white; margin: 12px 0; }
+    .cta-inner p { color: #d5e5e6; font-size: 17px; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Footer */
+    .footer { padding: 58px 0 90px; background: #102e3a; color: white; }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr .8fr .8fr 1fr; gap: 36px; }
+    .footer .brand-name strong { color: white; }
+    .footer .brand-name span { color: #c0d2d5; }
+    .footer p, .footer a { color: #c2d4d7; font-size: 15px; }
+    .footer a:hover { color: white; }
+    .footer h3 { margin-bottom: 17px; color: white; font-size: 17px; letter-spacing: 0; }
+    .footer-links { display: grid; gap: 10px; }
+    .footer-about p { max-width: 290px; margin-top: 18px; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; gap: 20px;
+      margin-top: 45px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.15);
+    }
+    .footer-bottom p { font-size: 14px; }
+
+    /* Mobile sticky actions */
+    .mobile-cta { display: none; }
+
+    @media (max-width: 1020px) {
+      .nav-links { gap: 16px; }
+      .nav-actions .btn-outline { display: none; }
+      .hero-grid { gap: 35px; }
+      .hero-photo { height: 440px; }
+      .care-intro { gap: 38px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 780px) {
+      .container { width: min(100% - 36px, var(--max)); }
+      .section { padding: 68px 0; }
+      .utility-inner { justify-content: center; }
+      .utility-left { display: none; }
+      .utility-right { gap: 14px; }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-actions { margin-left: auto; }
+      .nav-actions .btn { min-height: 43px; padding-inline: 15px; font-size: 15px; }
+      .nav-links {
+        display: none; position: absolute; top: 72px; left: 0; right: 0;
+        padding: 20px 24px 25px; background: white;
+        border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: grid; gap: 0; }
+      .nav-links a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+      .hero { padding: 52px 0 58px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-copy { max-width: 650px; }
+      .hero-copy > p { font-size: 17px; }
+      .hero-photo { height: 390px; border-radius: 24px; }
+      .hero-note { left: 14px; bottom: 14px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; gap: 22px 12px; }
+      .trust-item { justify-content: flex-start; }
+      .services-top { display: block; }
+      .services-top > .btn { margin-top: 20px; }
+      .service-grid { grid-template-columns: 1fr 1fr; gap: 13px; }
+      .service-card { display: block; min-height: 0; padding: 20px; }
+      .service-icon { margin-bottom: 16px; }
+      .service-card h3 { font-size: 19px; }
+      .care-intro { grid-template-columns: 1fr; gap: 30px; }
+      .care-photo { height: 360px; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .doctor-photo { height: 220px; }
+      .journey-grid { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .virtual-card { grid-template-columns: 1fr; padding: 28px; }
+      .virtual-visual { min-height: 200px; }
+      .cta-inner { display: block; }
+      .cta-actions { margin-top: 25px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+      .mobile-cta {
+        position: fixed; z-index: 1100; left: 0; right: 0; bottom: 0;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        padding: 11px 14px calc(11px + env(safe-area-inset-bottom));
+        background: rgba(255,255,255,.97); border-top: 1px solid var(--line);
+        box-shadow: 0 -8px 25px rgba(20,50,60,.09);
+      }
+      .mobile-cta .btn { min-height: 48px; padding: 0 10px; font-size: 15px; }
+      body { padding-bottom: 75px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 30px); }
+      .brand-lockup { min-width: 0; gap: 8px; }
+      .brand-mark { width: 39px; height: 39px; border-radius: 12px; font-size: 19px; }
+      .brand-name strong { font-size: 16px; }
+      .brand-name span { font-size: 11px; }
+      .nav-actions .btn { display: none; }
+      .hero-copy h1 { font-size: 42px; }
+      .hero-photo { height: 310px; }
+      .hero-note { max-width: 225px; padding: 13px; }
+      .hero-points { gap: 12px; }
+      .trust-item { gap: 8px; }
+      .trust-icon { width: 36px; height: 36px; }
+      .trust-item strong { font-size: 14px; }
+      .trust-item span { font-size: 13px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { padding: 16px 14px; }
+      .service-card .service-icon { width: 47px; height: 47px; }
+      .service-card h3 { font-size: 17px; }
+      .service-card p { font-size: 14px; }
+      .value-grid { gap: 18px 12px; }
+      .value-item { display: block; }
+      .value-item .service-icon { margin-bottom: 10px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .doctor-photo { height: 280px; }
+      .virtual-points { grid-template-columns: 1fr; }
+      .hours-panel { display: block; }
+      .hours-panel .btn { margin-top: 15px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { display: block; }
+      .footer-bottom p + p { margin-top: 8px; }
+      .cta-actions .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Kong Dental Surgery",
+    "url": "https://kongdental.com/",
+    "telephone": "+65 6767 9502",
+    "description": "Affordable comprehensive dental care across five dental clinics in Singapore.",
+    "foundingDate": "2010",
+    "openingHours": [
+      "Mo-Fr 09:00-21:00",
+      "Sa 09:00-18:00"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    },
+    "sameAs": [
+      "https://kongdental.com/about-us/",
+      "https://kongdental.com/contact-us/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="utility">
+    <div class="container utility-inner">
+      <div class="utility-left">Affordable, comprehensive dental care since 2010</div>
+      <div class="utility-right">
+        <span>Mon–Fri 9am–9pm · Sat 9am–6pm</span>
+        <a href="tel:+6567679502">Call +65 6767 9502</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand-lockup" href="#home" aria-label="Kong Dental Surgery home">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-name">
+          <strong>KONG DENTAL</strong>
+          <span>Surgery · Singapore</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+        <a href="#services">Treatments</a>
+        <a href="#about">Why Kong Dental</a>
+        <a href="#team">Our Dentists</a>
+        <a href="#locations">Locations</a>
+        <a href="#faq">FAQs</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="https://virtual.kongdental.com/">Virtual Consultation</a>
+        <a class="btn btn-primary" href="https://kongdental.com/contact-us/">Book Appointment</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-label="Open navigation"
+        aria-expanded="false" aria-controls="main-navigation">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO: new photographic hero image; replace with approved clinic photography if available -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Your smile, our care</span>
+          <h1>Dental care that feels <span>closer to home.</span></h1>
+          <p>
+            From everyday check-ups to advanced dental treatments, Kong Dental
+            helps individuals and families care for their smiles across five
+            convenient locations in Singapore.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://kongdental.com/contact-us/">
+              Book an Appointment <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-outline" href="#locations">Find a Clinic</a>
+          </div>
+          <div class="hero-points">
+            <div class="hero-point"><span class="check">✓</span> Established in 2010</div>
+            <div class="hero-point"><span class="check">✓</span> Five Singapore clinics</div>
+            <div class="hero-point"><span class="check">✓</span> Care for the whole family</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img class="hero-photo"
+            src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1400&q=85"
+            alt="A patient receiving attentive dental care in a bright modern dental clinic"
+            fetchpriority="high">
+          <div class="hero-note">
+            <span class="hero-note-icon" aria-hidden="true">
+              <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </span>
+            <div>
+              <strong>Kindness. Service. Honesty.</strong>
+              <span>Our values, at every visit.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust-strip" aria-label="Kong Dental highlights">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">⌂</span>
+          <div><strong>5 Clinic Locations</strong><span>Across Singapore</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">✦</span>
+          <div><strong>Since 2010</strong><span>Over a decade of care</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">♡</span>
+          <div><strong>Family Dentistry</strong><span>Care for different ages</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">＋</span>
+          <div><strong>Wide Range of Care</strong><span>Routine to restorative</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="services-top">
+          <div class="section-heading">
+            <span class="eyebrow">Our dental services</span>
+            <h2>Care for every stage of your smile.</h2>
+            <p>
+              Explore our core treatments and find the right starting point
+              for your dental needs.
+            </p>
+          </div>
+          <a class="btn btn-outline" href="https://kongdental.com/">Explore All Services</a>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg width="31" height="31" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M16 4c-5-4-11 0-10 7 1 6 3 15 7 17 2 1 2-8 4-8s2 9 4 8c4-2 6-11 7-17 1-7-5-11-12-7Z"/>
+                <path d="M11 10h10M16 6v8"/>
+              </svg>
+            </span>
+            <div>
+              <h3>General Dentistry</h3>
+              <p>Dental examinations, cleaning, fillings and everyday oral health care.</p>
+              <a class="text-link" href="https://kongdental.com/service/general-dentistry">Explore treatment →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg width="31" height="31" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M16 4c-5-4-11 0-10 7 1 6 3 15 7 17 2 1 2-8 4-8s2 9 4 8c4-2 6-11 7-17 1-7-5-11-12-7Z"/>
+                <path d="M9 15h14M12 12l-3 3 3 3M20 12l3 3-3 3"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Wisdom Tooth Removal</h3>
+              <p>Assessment and extraction options for troublesome wisdom teeth.</p>
+              <a class="text-link" href="https://kongdental.com/service/wisdom-tooth-extraction">Explore treatment →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg width="31" height="31" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M5 7h22v18H5zM10 7v18M22 7v18M5 13h22M5 19h22"/>
+                <path d="M12 4v6M20 4v6"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Braces & Orthodontics</h3>
+              <p>Orthodontic options designed to improve tooth alignment and bite.</p>
+              <a class="text-link" href="https://kongdental.com/service/orthodontic-treatment">Explore treatment →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg width="31" height="31" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M16 4c-5-4-11 0-10 7 1 6 3 15 7 17 2 1 2-8 4-8s2 9 4 8c4-2 6-11 7-17 1-7-5-11-12-7Z"/>
+                <path d="M16 10v8M12 14h8"/>
+              </svg>
+            </span>
+            <div>
+              <h3>Dental Implants</h3>
+              <p>Tooth replacement consultations and restorative treatment planning.</p>
+              <a class="text-link" href="https://kongdental.com/service/dental-implants">Explore treatment →</a>
+            </div>
+          </article>
+        </div>
+
+        <p style="margin-top:22px;font-size:15px">
+          Also available: children's dentistry, root canal treatment, gum treatment,
+          teeth whitening, interceptive orthodontics and Myobrace.
+          <a class="text-link" href="https://kongdental.com/">View the full service range →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- WHY KONG DENTAL: 6 custom SVG icons, arranged 3 + 3 -->
+    <section class="section" id="about">
+      <div class="container care-intro">
+        <div>
+          <img class="care-photo"
+            src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1100&q=85"
+            alt="Dentist providing a patient with a dental examination in a clean clinic"
+            loading="lazy">
+        </div>
+        <div class="care-copy">
+          <span class="eyebrow">Why Kong Dental</span>
+          <h2>Thoughtful care, built around people.</h2>
+          <p>
+            Established in 2010, Kong Dental Surgery is guided by a simple
+            commitment: to make comprehensive dental care accessible, welcoming
+            and convenient for the communities we serve.
+          </p>
+
+          <div class="value-grid">
+            <div class="value-item">
+              <span class="service-icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </span>
+              <div><strong>Comprehensive Care</strong><p>A broad range of dental services.</p></div>
+            </div>
+
+            <div class="value-item">
+              <span class="service-icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/>
+                </svg>
+              </span>
+              <div><strong>Modern Facilities</strong><p>Technology and facilities for dental care.</p></div>
+            </div>
+
+            <div class="value-item">
+              <span class="service-icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M20 8c0 5-8 12-8 12S4 13 4 8a4 4 0 0 1 8-1 4 4 0 0 1 8 1Z"/>
+                </svg>
+              </span>
+              <div><strong>Kindness</strong><p>Patient-centred service and support.</p></div>
+            </div>
+
+            <div class="value-item">
+              <span class="service-icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/>
+                </svg>
+              </span>
+              <div><strong>Convenient Locations</strong><p>Five clinics across Singapore.</p></div>
+            </div>
+
+            <div class="value-item">
+              <span class="service-icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 2 4 6v6c0 5 4 8 8 10 4-2 8-5 8-10V6l-8-4Z"/>
+                  <path d="m8 12 3 3 5-6"/>
+                </svg>
+              </span>
+              <div><strong>Honesty</strong><p>Clear communication with patients.</p></div>
+            </div>
+
+            <div class="value-item">
+              <span class="service-icon" aria-hidden="true">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/>
+                  <path d="M3 20c0-4 2-6 6-6s6 2 6 6M15 15c3-1 6 1 6 4"/>
+                </svg>
+              </span>
+              <div><strong>Family-Friendly</strong><p>Dental care for children and adults.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DENTISTS -->
+    <section class="section team" id="team">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Meet the team</span>
+          <h2>Get to know our dentists.</h2>
+          <p>
+            Meet some of the dental professionals at Kong Dental Surgery.
+            Visit the team page for further profiles and information.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="doctor-card">
+            <img class="doctor-photo"
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https%3A//assets.cdn.filesafe.space/iu8BKNy7ON4O02Em2dOP/media/6a7b1e641eb55bdfc3a3f8d2.png"
+              alt="Dr. Low Peng Koon" loading="lazy">
+            <div class="doctor-info">
+              <h3>Dr. Low Peng Koon</h3>
+              <p>BDS, MDS, National University of Singapore</p>
+              <a class="text-link" href="https://kongdental.com/about-us/">View dentist profiles →</a>
+            </div>
+          </article>
+
+          <article class="doctor-card">
+            <img class="doctor-photo"
+              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=85"
+              alt="Dental professional portrait placeholder" loading="lazy">
+            <div class="doctor-info">
+              <h3>Dr. Ma Shiqi</h3>
+              <p>BDS, National University of Singapore</p>
+              <a class="text-link" href="https://kongdental.com/about-us/">View dentist profiles →</a>
+            </div>
+          </article>
+
+          <article class="doctor-card">
+            <img class="doctor-photo"
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=85"
+              alt="Dental professional portrait placeholder" loading="lazy">
+            <div class="doctor-info">
+              <h3>Dr. Chew Shu Qeng, Celine</h3>
+              <p>BDS, University of Otago, New Zealand</p>
+              <a class="text-link" href="https://kongdental.com/about-us/">View dentist profiles →</a>
+            </div>
+          </article>
+        </div>
+        <p style="margin-top:17px;font-size:14px">
+          Note: replace the two generic portrait images with the respective
+          approved dentist photographs before publishing.
+        </p>
+      </div>
+    </section>
+
+    <!-- PATIENT JOURNEY -->
+    <section class="section journey">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Your visit, made simple</span>
+          <h2>A clear path to your next appointment.</h2>
+          <p>Start with your concern, choose a convenient clinic and speak with the team.</p>
+        </div>
+        <div class="journey-grid">
+          <article class="journey-card">
+            <div class="journey-number">01</div>
+            <h3>Explore your options</h3>
+            <p>Browse treatments and learn about the dental services available at Kong Dental.</p>
+          </article>
+          <article class="journey-card">
+            <div class="journey-number">02</div>
+            <h3>Choose a clinic</h3>
+            <p>Find the location that works best for your home, workplace or daily routine.</p>
+          </article>
+          <article class="journey-card">
+            <div class="journey-number">03</div>
+            <h3>Make an enquiry</h3>
+            <p>Send your appointment request online or call the clinic team for assistance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section locations" id="locations">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Find your nearest clinic</span>
+          <h2>Five locations. Care closer to you.</h2>
+          <p>Choose a Kong Dental clinic and contact the team directly.</p>
+        </div>
+
+        <div class="location-grid">
+          <article class="location-card">
+            <div>
+              <h3>Choa Chu Kang — Limbang</h3>
+              <p>533 Choa Chu Kang Street 51, #02-08<br>Limbang Shopping Centre<br>Singapore 680533</p>
+              <a class="location-phone" href="tel:+6567695833">+65 6769 5833</a>
+            </div>
+            <a class="location-arrow" href="https://kongdental.com/contact-us/" aria-label="Contact Limbang clinic">→</a>
+          </article>
+
+          <article class="location-card">
+            <div>
+              <h3>Yew Tee Point</h3>
+              <p>21 Choa Chu Kang North 6, #01-27<br>Singapore 689578<br><span style="font-size:14px">Enter the clinic from outside the mall.</span></p>
+              <a class="location-phone" href="tel:+6567679502">+65 6767 9502</a>
+            </div>
+            <a class="location-arrow" href="https://kongdental.com/contact-us/" aria-label="Contact Yew Tee clinic">→</a>
+          </article>
+
+          <article class="location-card">
+            <div>
+              <h3>Jurong East</h3>
+              <p>Block 134, Jurong Gateway Road, #02-307<br>Singapore 600134</p>
+              <a class="location-phone" href="tel:+6562513098">+65 6251 3098</a>
+            </div>
+            <a class="location-arrow" href="https://kongdental.com/contact-us/" aria-label="Contact Jurong East clinic">→</a>
+          </article>
+
+          <article class="location-card">
+            <div>
+              <h3>Teck Whye Lane</h3>
+              <p>Block 143, Teck Whye Lane, #01-239<br>Singapore 680143</p>
+              <a class="location-phone" href="tel:+6562195898">+65 6219 5898</a>
+            </div>
+            <a class="location-arrow" href="https://kongdental.com/contact-us/" aria-label="Contact Teck Whye clinic">→</a>
+          </article>
+
+          <article class="location-card">
+            <div>
+              <h3>Sunshine Place</h3>
+              <p>Block 475, Choa Chu Kang Avenue 3, #02-06<br>Singapore 680475</p>
+              <a class="location-phone" href="tel:+6564932587">+65 6493 2587</a>
+            </div>
+            <a class="location-arrow" href="https://kongdental.com/contact-us/" aria-label="Contact Sunshine Place clinic">→</a>
+          </article>
+        </div>
+
+        <div class="hours-panel">
+          <div>
+            <h3>Consultation hours</h3>
+            <p>Monday–Friday: 9:00am–9:00pm · Saturday: 9:00am–6:00pm · Sunday & Public Holidays: Closed</p>
+          </div>
+          <a class="btn btn-white" href="tel:+6567679502">Call the clinic team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIRTUAL CONSULTATION -->
+    <section class="section">
+      <div class="container">
+        <div class="virtual-card">
+          <div>
+            <span class="eyebrow">A convenient first step</span>
+            <h2>Prefer to talk before visiting?</h2>
+            <p>
+              Explore Kong Dental's virtual consultation option to discuss
+              treatment choices, estimated pricing guidance, treatment duration
+              and your next steps with the team.
+            </p>
+            <div class="virtual-points">
+              <span>✓ Understand treatment options</span>
+              <span>✓ Discuss estimated pricing</span>
+              <span>✓ Learn about treatment duration</span>
+              <span>✓ Ask questions from home</span>
+            </div>
+            <a class="btn btn-primary" href="https://virtual.kongdental.com/">
+              Explore Virtual Consultation →
+            </a>
+          </div>
+          <div class="virtual-visual">
+            <svg width="70" height="70" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="7" y="10" width="50" height="35" rx="5"/>
+              <path d="M20 55h24M32 45v10M22 25h20M22 32h13"/>
+              <circle cx="48" cy="43" r="9" fill="#087b83" stroke="white"/>
+              <path d="m44 43 3 3 5-6"/>
+            </svg>
+            <strong>Start with a conversation.</strong>
+            <span>Discuss your dental questions before your clinic visit.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Helpful information</span>
+          <h2>Frequently asked questions.</h2>
+          <p>Some useful details before you get in touch.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>How many Kong Dental clinics are there in Singapore?</span><span>−</span>
+            </button>
+            <div class="faq-answer">
+              <p>Kong Dental Surgery lists five clinic locations: Limbang, Yew Tee Point, Jurong East, Teck Whye Lane and Sunshine Place.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What dental treatments are available?</span><span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Services include general dentistry, wisdom tooth extraction, children's dentistry, dental implants, orthodontics, root canal treatment, periodontal treatment, teeth whitening, interceptive orthodontics and Myobrace. Treatment suitability is assessed by the dental team.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What are the clinic consultation hours?</span><span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The published consultation hours are Monday to Friday, 9am to 9pm, and Saturday, 9am to 6pm. The clinics are closed on Sundays and public holidays. Please confirm the hours of your selected location before visiting.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can I ask about treatment costs before booking?</span><span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Contact the clinic team or explore the virtual consultation service to discuss treatment options and estimated pricing guidance. Final fees depend on the dentist's assessment and the treatment required.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I make an appointment?</span><span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Use the enquiry form on the official website or call the clinic team at +65 6767 9502. You can indicate your preferred treatment, clinic, date and time through the enquiry form.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container cta-inner">
+        <div>
+          <span class="eyebrow" style="color:#9ed8d4">Your next step</span>
+          <h2>Let's take care of your smile.</h2>
+          <p>Find a nearby clinic or send an appointment enquiry to Kong Dental Surgery.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="https://kongdental.com/contact-us/">Book an Appointment</a>
+          <a class="btn" style="border-color:#b7d2d6;color:white" href="tel:+6567679502">Call +65 6767 9502</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand-lockup" href="#home">
+            <span class="brand-mark" aria-hidden="true">K</span>
+            <span class="brand-name">
+              <strong>KONG DENTAL</strong>
+              <span>Surgery · Singapore</span>
+            </span>
+          </a>
+          <p>
+            Affordable, comprehensive dental care for individuals and families
+            across five convenient Singapore clinic locations.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <div class="footer-links">
+            <a href="#services">Dental Services</a>
+            <a href="#about">Why Kong Dental</a>
+            <a href="#team">Our Dentists</a>
+            <a href="#locations">Clinic Locations</a>
+            <a href="#faq">FAQs</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Popular Treatments</h3>
+          <div class="footer-links">
+            <a href="https://kongdental.com/service/general-dentistry">General Dentistry</a>
+            <a href="https://kongdental.com/service/wisdom-tooth-extraction">Wisdom Tooth Extraction</a>
+            <a href="https://kongdental.com/service/dental-implants">Dental Implants</a>
+            <a href="https://kongdental.com/service/orthodontic-treatment">Orthodontics</a>
+            <a href="https://kongdental.com/service/teeth-whitening">Teeth Whitening</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Get in touch</h3>
+          <div class="footer-links">
+            <a href="tel:+6567679502">+65 6767 9502</a>
+            <a href="https://kongdental.com/contact-us/">Contact & Enquiries</a>
+            <a href="https://virtual.kongdental.com/">Virtual Consultation</a>
+            <a href="https://kongdental.com/about-us/">About Kong Dental</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Kong Dental Surgery. All rights reserved.</p>
+        <p>Kindness · Service · Honesty</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Persistent two-action mobile appointment bar -->
+  <div class="mobile-cta" aria-label="Quick appointment actions">
+    <a class="btn btn-outline" href="#locations">Find a Clinic</a>
+    <a class="btn btn-primary" href="https://kongdental.com/contact-us/">Book Now</a>
+  </div>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    // Accessible FAQ accordion
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.closest(".faq-item");
+        const isOpen = item.classList.toggle("open");
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.querySelector("span:last-child").textContent = isOpen ? "−" : "+";
+      });
+    });
+
+    // Current copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
