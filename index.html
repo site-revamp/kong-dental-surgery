@@ -192,10 +192,24 @@
     .trust-strip { padding: 25px 0; background: white; border-bottom: 1px solid var(--line); }
     .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    
     .trust-icon {
-      width: 42px; height: 42px; display: grid; place-items: center;
-      border-radius: 13px; background: var(--brand-light); color: var(--brand);
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+        border-radius: 13px;
+        background: var(--brand-light);
+        color: var(--brand);
+        font-family: Arial, sans-serif;
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 1;
+        text-align: center;
     }
+
     .trust-item strong { display: block; color: var(--navy); font-size: 15px; }
     .trust-item span { display: block; color: var(--muted); font-size: 14px; }
 
